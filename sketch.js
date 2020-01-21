@@ -84,7 +84,7 @@ let startx;
 let starty;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(600, 600);
   r = height / 2 - 16;
   startx = 50;
   starty = 50;
