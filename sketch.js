@@ -1,3 +1,4 @@
+/*
 let r;
 let factor = 0;
 let total;
@@ -73,4 +74,44 @@ function draw() {
   
   heart4.output();
   heart4.lines();
+}
+*/
+
+
+let r;
+let factor = 0;
+let startx;
+let starty;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  r = height / 2 - 16;
+  startx = 50;
+  starty = 50;
+}
+
+function getVector(index, total) {
+  const angle = map(index % total, 0, total, 0, TWO_PI);
+  const v = p5.Vector.fromAngle(angle + PI);
+  v.mult(r);
+  return v;
+}
+
+function draw() {
+  background(0);
+  const total = 50; //int(map(mouseX, 0, width, 0, 200));
+  factor += 0.015;
+
+  translate(width / 2, height / 2);
+  stroke(mouseX,mouseY, 30);
+  strokeWeight(2);
+  noFill();
+  ellipse(startx, starty, r * 2);
+
+  strokeWeight(2);
+  for (let i = 0; i < total; i++) {
+    const a = getVector(i, total);
+    const b = getVector(i * factor, total);
+    line(a.x + startx, a.y + starty, b.x + startx, b.y + starty);
+  }
 }
