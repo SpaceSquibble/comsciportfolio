@@ -14,7 +14,7 @@ function setup()
   sliderN = createSlider(1,20,10,1);
   sliderD = createSlider(1,20,10,1);
   sliderJ = createSlider(1,100,200,1);
-  sliderE = createSlider(1,500,1,1);
+  sliderE = createSlider(1,50,1,1);
   sliderN.input(draw);
   sliderD.input(draw);
   sliderJ.input(draw);
